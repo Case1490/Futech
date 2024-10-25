@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --Black: #1f1f20;
+  --Blue: #2b4c7e;
+  --SteelBlue: #567ebb;
+  --SlateGray: #606d80;
+  --LightGray: #f6f6f6;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--SlateGray);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color: var(--Blue);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Cuando el enlace tiene la clase 'active', la línea azul estará completamente visible */
+.link.active::after {
+  width: 100%;
+}
+
+.link.active{
+  color: var(--Black);
+}
+
+/* BENEFICIOS DE USAR MOTO ELÉCTRICA */
+.card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+.background-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+  max-width: 40%;
+}
+
+/* BenefitsGrid.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.moto-image {
+  width: 470px;
+  /* O el tamaño que prefieras */
+  height: 470px;
+  margin: 20px;
+  /* O el tamaño que prefieras */
+  object-fit: contain;
+  /* Esto ajustará la imagen, manteniendo las proporciones y rellenando el espacio */
+  border-radius: 8px;
+  /* Opcional: añade bordes redondeados para un mejor acabado */
+}
+
+/* LOADER */
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-box {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.color {
+  background-color: #3395ff;
+}
+
+.WH {
+  width: 10px;
+  height: 70px;
+  position: absolute;
+}
+
+.l1 {
+  left: 0;
+  animation: l1 4s infinite linear;
+}
+
+.l2 {
+  right: 0;
+  animation: l2 4s infinite linear;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  animation: ball 4s infinite linear;
+}
+
+@keyframes l1 {
+  0% {
+    top: 0%;
+  }
+
+  10% {
+    top: -20%;
+  }
+
+  20% {
+    top: 0%;
+  }
+
+  30% {
+    top: 40%;
+  }
+
+  40% {
+    top: 0%;
+  }
+
+  50% {
+    top: 30%;
+  }
+
+  60% {
+    top: 40%;
+  }
+
+  70% {
+    top: 60%;
+  }
+
+  80% {
+    top: -10%;
+  }
+
+  90% {
+    top: 10%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes l2 {
+  0% {
+    bottom: 0%;
+  }
+
+  10% {
+    bottom: -20%;
+  }
+
+  20% {
+    bottom: 40%;
+  }
+
+  30% {
+    bottom: 60%;
+  }
+
+  40% {
+    bottom: 20%;
+  }
+
+  50% {
+    bottom: 30%;
+  }
+
+  60% {
+    bottom: 40%;
+  }
+
+  70% {
+    bottom: 60%;
+  }
+
+  80% {
+    bottom: -10%;
+  }
+
+  90% {
+    bottom: 10%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+@keyframes ball {
+  0% {
+    top: 80%;
+    left: 96%;
+  }
+
+  10% {
+    top: 10%;
+    left: 3%;
+  }
+
+  20% {
+    top: 10%;
+    left: 90%;
+  }
+
+  30% {
+    top: 60%;
+    left: 3%;
+  }
+
+  40% {
+    top: 10%;
+    left: 90%;
+  }
+
+  50% {
+    top: 50%;
+    left: 3%;
+  }
+
+  60% {
+    top: 10%;
+    left: 90%;
+  }
+
+  70% {
+    top: 93%;
+    left: 3%;
+  }
+
+  80% {
+    top: 83%;
+    left: 90%;
+  }
+
+  90% {
+    top: 10%;
+    left: 3%;
+  }
+
+  100% {
+    top: 80%;
+    left: 90%;
+  }
+}
