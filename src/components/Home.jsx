@@ -1,5 +1,6 @@
 import Healthy from "./Healthy"
 import MainPage from "./MainPage"
+import ProductsPopularity from "./ProductsPopularity"
 import ServiceHome from "./ServiceHome"
 import ShowProducts from "./ShowProducts"
 
@@ -9,7 +10,8 @@ export const Home = () => {
       <MainPage />
       <ServiceHome />
       <ShowProducts />
-      <Healthy/>
+      <Healthy />
+      <ProductsPopularity/>
     </div>
   )
 }

@@ -116,6 +116,7 @@ body{
   /* Esto ajustará la imagen, manteniendo las proporciones y rellenando el espacio */
   border-radius: 8px;
   /* Opcional: añade bordes redondeados para un mejor acabado */
+  
 }
 
 /* LOADER */
@@ -310,4 +311,18 @@ body{
     top: 80%;
     left: 90%;
   }
+}
+
+/* PRODUCTOS POPULARES */ 
+.background-scroll {
+  background-image: url("./images/callleFondo.jpg");
+  /* Ruta de tu imagen */
+  background-attachment: fixed;
+  /* Fija la imagen al viewport */
+  background-size: cover;
+  /* Ajusta el tamaño para que cubra todo el contenedor */
+  background-position: center;
+  /* Centra la imagen */
+  min-height: 100vh;
+  /* Altura del contenedor */
 }
