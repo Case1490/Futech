@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import Image from "../images/motos/M005.png";
 
-const CardProductPopularity = () => {
+const CardProductPopularity = ({nombre, imagen}) => {
   return (
     <div className="w-[30%] rounded-xl overflow-hidden">
       <div className="bg-white">
-        <img src={Image} alt="" className="w-full h-auto rounded-t-xl" />
+        <img src={imagen} alt="" className="w-full h-[350px] rounded-t-xl object-cover" />
       </div>
       <div className="bg-Blue p-4 text-white">
-        <h1 className="text-center font-bold text-2xl">Nombre</h1>
+        <h1 className="text-center font-bold text-2xl">{nombre}</h1>
         <h2 className="text-center my-4">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos
           iusto error quae nesciunt dicta natus.

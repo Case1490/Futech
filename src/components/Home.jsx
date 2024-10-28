@@ -1,8 +1,12 @@
 import Healthy from "./Healthy"
 import MainPage from "./MainPage"
+import Map from "./Map"
+import PaymentMethods from "./PaymentMethods"
 import ProductsPopularity from "./ProductsPopularity"
 import ServiceHome from "./ServiceHome"
 import ShowProducts from "./ShowProducts"
+import Suscribe from "./Suscribe"
+import Testimonials from "./Testimonials"
 
 export const Home = () => {
   return (
@@ -11,7 +15,13 @@ export const Home = () => {
       <ServiceHome />
       <ShowProducts />
       <Healthy />
-      <ProductsPopularity/>
+      <ProductsPopularity />
+      <PaymentMethods />
+      <Testimonials />
+      <Suscribe />
+      <Map />
     </div>
-  )
+  );
 }
+
+

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import { Home } from "./components/Home";
 import ElectricMotorcycles from "./components/ElectricMotorcycles";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
         <Route path="/motos-electricas" element={<ElectricMotorcycles />} />
         <Route path="/contacto" element={<Contact />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
