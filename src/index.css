@@ -498,6 +498,10 @@ body{
   fill: rgb(0, 0, 0);
 }
 
+.whatsappSvgWhite path {
+  fill: rgb(255, 255, 255);
+}
+
 .socialContainer:hover .socialSvg {
   animation: slide-in-top 0.3s both;
 }
@@ -516,4 +520,28 @@ body{
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.motorcycle img {
+  transition: transform 0.3s ease;
+}
+
+.motorcycle img:hover{
+  transform: scale(1.1);
+}
+
+.motorcycle:not(:last-child) {
+  border-right: 2px solid #e0e0e0;
+}
+
+.fondo{
+  background: linear-gradient(to bottom, #f8f9fa, #90befa);
+}
+
+.carousel-image{
+  max-height: 500px;
+    /* Ajusta esta altura según tu diseño */
+  object-fit: contain;
+    /* Mantiene las proporciones sin recortar */
+  width: 100%;
 }

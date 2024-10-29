@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 
 const CardMotorcycle = ({ image, name }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 text-center hover:cursor-pointer my-2">
+    <div className="bg-white shadow-xl rounded-lg p-6 text-center hover:cursor-pointer my-2 motorcycle">
       <div className="h-48 w-full overflow-hidden flex items-center justify-center">
-        {/* Clase para ajustar la imagen */}
-        <img src={image} alt={name} className="object-cover h-full w-full m-4" />
+        <img src={image} alt={name} className="object-contain h-full w-full m-4" />
       </div>
       <h3 className="text-xl font-bold mb-2 uppercase">{name}</h3>
       <p>Motos eléctricas, para mayor eficiencia</p>
