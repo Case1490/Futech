@@ -66,6 +66,7 @@ const ElectricMotorcycles = () => {
                   key={motorcycle.id}
                   image={motorcycle.imagen}
                   name={motorcycle.nombre}
+                  description={motorcycle.descripcion}
                 />
               </Link>
             ))}

@@ -83,11 +83,7 @@ const MainPage = () => {
             transition={{ duration: 1 }} // Duración de la animación
             className="my-4"
           >
-            Descubre la libertad sobre dos ruedas con nuestra moto eléctrica de
-            última generación. Diseñada para el urbanita moderno, combina un
-            motor potente y silencioso con una batería de larga duración,
-            brindando una velocidad máxima de 45 km/h y una autonomía de hasta
-            60 km.
+            {motos[currentMoto].descripcionLarga}
           </motion.p>
 
           <div className="flex items-center justify-center gap-x-4">

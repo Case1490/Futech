@@ -34,6 +34,7 @@ const ProductsPopularity = () => {
               id: doc.id,
               nombre: data.nombre,
               imagen: imageUrl, // URL completa de la imagen
+              descripcion: data.descripcion, // Asegúrate de incluir la descripción
             };
           })
         );
@@ -46,6 +47,8 @@ const ProductsPopularity = () => {
 
     fetchPopularMotos();
   }, []);
+
+  console.log(popularMotos);
 
   return (
     <div className="background-scroll">
@@ -60,6 +63,7 @@ const ProductsPopularity = () => {
               key={moto.id}
               nombre={moto.nombre}
               imagen={moto.imagen}
+              description={moto.descripcion} // Aquí se pasa la descripción
             />
           ))}
         </div>

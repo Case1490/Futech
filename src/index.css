@@ -545,3 +545,9 @@ body{
     /* Mantiene las proporciones sin recortar */
   width: 100%;
 }
+
+.description {
+  height: 65px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

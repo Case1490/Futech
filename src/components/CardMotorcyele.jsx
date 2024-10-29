@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 
-const CardMotorcycle = ({ image, name }) => {
+const CardMotorcycle = ({ image, name, description, onClick }) => {
   return (
-    <div className="bg-white shadow-xl rounded-lg p-6 text-center hover:cursor-pointer my-2 motorcycle">
+    <div
+      className="bg-white shadow-xl rounded-lg p-6 text-center hover:cursor-pointer my-2 motorcycle"
+      onClick={onClick}
+    >
       <div className="h-48 w-full overflow-hidden flex items-center justify-center">
-        <img src={image} alt={name} className="object-contain h-full w-full m-4" />
+        <img
+          src={image}
+          alt={name}
+          className="object-contain h-full w-full m-4"
+        />
       </div>
       <h3 className="text-xl font-bold mb-2 uppercase">{name}</h3>
-      <p>Motos eléctricas, para mayor eficiencia</p>
+      <p className="description">{description}</p>
       <div className="flex flex-col items-center mt-4 space-y-2">
         <Link className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2 px-4 text-center">
           Comprar

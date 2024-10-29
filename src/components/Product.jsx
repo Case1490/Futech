@@ -9,34 +9,39 @@ import "swiper/css";
 import "swiper/css/navigation";
 import WhatsAppIconWhite from "../icons/WhatsAppIconWhite";
 import Loader from "./Loader";
+import RelatedProducts from "./RelatedProducts";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [images, setImages] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [loading, setLoading] = useState(false);
+
+  // Código para que nos lleve al inicio de la página
+  useEffect(() => {
+    if (loading) {
+      window.scrollTo(0, 0); // Desplazarse hacia el inicio
+    }
+  }, [loading]);
 
   useEffect(() => {
     const fetchProduct = async () => {
+      setLoading(true); // Activa el loader
       try {
         const docRef = doc(db, "motos_futech", id);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
           const data = docSnap.data();
-
-          // Obtener la imagen principal del producto
           const mainImageRef = ref(storage, data.imagen);
           const mainImageUrl = await getDownloadURL(mainImageRef);
-
-          // Obtener la imagen en miniatura (si está disponible en la base de datos)
           let thumbnailImageUrl = null;
           if (data.miniatura) {
             const thumbnailImageRef = ref(storage, data.miniatura);
             thumbnailImageUrl = await getDownloadURL(thumbnailImageRef);
           }
 
-          // Crear un arreglo de imágenes (principal y miniatura)
           const imagesArray = [mainImageUrl];
           if (thumbnailImageUrl) {
             imagesArray.push(thumbnailImageUrl);
@@ -49,6 +54,8 @@ const Product = () => {
         }
       } catch (error) {
         console.error("Error al obtener el producto:", error);
+      } finally {
+        setLoading(false); // Desactiva el loader después de cargar el producto
       }
     };
 
@@ -70,12 +77,17 @@ const Product = () => {
     window.open(whatsappLink, "_blank");
   };
 
-  if (!product) return <div className="flex items-center justify-center min-h-screen"><Loader/></div>;
+  if (loading || !product) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className="pt-[120px] min-h-screen">
       <div className="w-[80%] m-auto grid grid-cols-2 gap-x-8">
-        {/* Columna de imágenes con carrusel usando Swiper */}
         <div className="relative flex items-center justify-center">
           <Swiper
             modules={[Navigation]}
@@ -97,19 +109,12 @@ const Product = () => {
           </Swiper>
         </div>
 
-        {/* Columna de detalles del producto */}
         <div className="p-4 my-4">
           <h2 className="text-4xl font-bold mb-4 text-Black">
             {product.nombre}
           </h2>
-          <p className="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-            quidem voluptates numquam optio accusantium nemo corporis cumque
-            minus odit possimus totam, laudantium quae veniam rerum expedita
-            alias eum adipisci tempore?
-          </p>
+          <p className="mb-4">{product.descripcionLarga}</p>
 
-          {/* Especificaciones */}
           <h3 className="text-2xl font-semibold mb-2">Especificaciones</h3>
           <ul className="list-disc ml-6 mb-4">
             {product.especificaciones.map((spec, index) => (
@@ -117,7 +122,6 @@ const Product = () => {
             ))}
           </ul>
 
-          {/* Colores */}
           <h3 className="text-2xl font-semibold mb-2">Colores disponibles</h3>
           <select className="border p-2 rounded mb-4 w-full capitalize outline-none">
             {product.colores.map((color, index) => (
@@ -127,7 +131,6 @@ const Product = () => {
             ))}
           </select>
 
-          {/* Selector de cantidad */}
           <div className="flex items-center justify-center gap-x-4">
             <div className="flex items-center gap-4 flex-1 ">
               <button
@@ -150,16 +153,33 @@ const Product = () => {
               </button>
             </div>
 
-            {/* Botón de compra */}
             <a
               onClick={handleBuy}
               className="bg-green-500 text-white px-6 py-2 rounded flex items-center justify-center gap-2 flex-1"
             >
-              <WhatsAppIconWhite/>
-               Cotizar ahora!
+              <WhatsAppIconWhite />
+              Cotizar ahora!
             </a>
           </div>
+
+          <div className="flex text-center my-4 space-x-2">
+            <div className="bg-purple-600 text-white font-bold rounded-xl shadow-xl p-2">
+              <h1>Garantía de un año sin preocupaciones</h1>
+            </div>
+
+            <div className="bg-Blue text-white font-bold rounded-xl shadow-xl p-2">
+              <h1>Batería de grafeno: carga más rápida, duración más larga</h1>
+            </div>
+          </div>
+
+          <h1 className="text-red-500">
+            *Emitimos Boleta y factura: respaldo para tu compra
+          </h1>
         </div>
+      </div>
+
+      <div className="w-[80%] mt-10 m-auto">
+        <RelatedProducts id={id} setLoading={setLoading} />
       </div>
     </div>
   );

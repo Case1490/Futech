@@ -44,7 +44,10 @@ const ShowProducts = () => {
               Nuestros Productos
             </h1>
           </div>
-          <Link className="rounded-full py-2 px-4 text-center border-2 border-Blue hover:bg-Blue hover:text-white transition-all delay-100 ease-out hover:shadow-2xl">
+          <Link
+            to="/motos-electricas"
+            className="rounded-full py-2 px-4 text-center border-2 border-Blue hover:bg-Blue hover:text-white transition-all delay-100 ease-out hover:shadow-2xl"
+          >
             Ver todo
           </Link>
         </div>
@@ -67,7 +70,8 @@ const ShowProducts = () => {
               <SwiperSlide key={product.id}>
                 <CardMotorcyele
                   name={product.nombre}
-                  image={product.imageUrl} // Enviamos la URL de la imagen
+                  image={product.imageUrl}
+                  description={product.descripcion}
                 />
               </SwiperSlide>
             ))}
