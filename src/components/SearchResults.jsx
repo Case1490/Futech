@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-
-const SearchResults = ({ results, searchTerm, onResultClick }) => {
+const SearchResults = ({ results, searchTerm, onSelectResult }) => {
+  // Función para subrayar las letras coincidentes en el nombre de la moto
   const highlightMatch = (text) => {
-    if (!text) return "";
+    if (!text) return ""; // Verificar que 'text' no sea undefined
     const regex = new RegExp(`(${searchTerm})`, "gi");
     return text.replace(
       regex,
@@ -16,24 +16,23 @@ const SearchResults = ({ results, searchTerm, onResultClick }) => {
       {results.length > 0 ? (
         results.map((moto) => (
           <Link
+            to={`/motos-electricas/${moto.id}`} // Usar Link para navegar a la página de la moto
             key={moto.id}
-            to={`/motos-electricas/${moto.id}`}
-            onClick={onResultClick} // Añadir el manejador de clics aquí
+            onClick={onSelectResult} // Llamar a onSelectResult al hacer clic
+            className="flex items-center gap-4 p-2 hover:bg-gray-200 cursor-pointer"
           >
-            <div className="flex items-center gap-4 p-2 hover:bg-gray-200">
-              <img
-                src={moto.imageUrl}
-                alt={moto.nombre}
-                className="w-12 h-12 object-cover"
-              />
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: moto.nombre
-                    ? highlightMatch(moto.nombre)
-                    : "Nombre no disponible",
-                }}
-              />
-            </div>
+            <img
+              src={moto.imageUrl}
+              alt={moto.nombre}
+              className="w-12 h-12 object-cover"
+            />
+            <p
+              dangerouslySetInnerHTML={{
+                __html: moto.nombre
+                  ? highlightMatch(moto.nombre)
+                  : "Nombre no disponible",
+              }}
+            />
           </Link>
         ))
       ) : (
@@ -49,6 +48,5 @@ const SearchResults = ({ results, searchTerm, onResultClick }) => {
     </div>
   );
 };
-
 
 export default SearchResults;
