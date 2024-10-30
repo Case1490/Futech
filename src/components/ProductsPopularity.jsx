@@ -60,6 +60,7 @@ const ProductsPopularity = () => {
           {popularMotos.map((moto) => (
             <CardProductPopularity
               key={moto.id}
+              id={moto.id}
               nombre={moto.nombre}
               imagen={moto.imagen}
               description={moto.descripcion} // Aquí se pasa la descripción

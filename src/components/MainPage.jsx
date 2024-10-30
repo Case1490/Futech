@@ -46,6 +46,7 @@ const MainPage = () => {
   const nombreCompleto = motos[currentMoto].nombre.split(" ");
   const primerNombre = nombreCompleto[0];
   const segundoNombre = nombreCompleto.slice(1).join(" ");
+  const mensajeWhatsApp = `https://wa.me/51902040118?text=Hola, estoy interesado en ${motos[currentMoto].nombre}, quisiera más información`;
 
   return (
     <div className="bg-gray-100 min-h-[80vh]">
@@ -86,7 +87,9 @@ const MainPage = () => {
 
           <div className="flex items-center justify-center gap-x-4">
             <a
-              href=""
+              href={mensajeWhatsApp}
+              target="_blank"
+              rel="noopener noreferrer"
               className="uppercase px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white"
             >
               Comprar

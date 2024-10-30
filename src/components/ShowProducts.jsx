@@ -70,6 +70,7 @@ const ShowProducts = () => {
               <SwiperSlide key={product.id}>
                 <Link to={`/motos-electricas/${product.id}`}>
                   <CardMotorcyele
+                    id={product.id}
                     name={product.nombre}
                     image={product.imageUrl}
                     description={product.descripcion}

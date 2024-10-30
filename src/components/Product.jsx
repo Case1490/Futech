@@ -17,6 +17,7 @@ const Product = () => {
   const [images, setImages] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("");
 
   // Código para que nos lleve al inicio de la página
   useEffect(() => {
@@ -36,21 +37,21 @@ const Product = () => {
           const data = docSnap.data();
           const mainImageRef = ref(storage, data.imagen);
           const mainImageUrl = await getDownloadURL(mainImageRef);
-          let thumbnailImageUrl = null;
-          if (data.miniatura) {
-            const thumbnailImageRef = ref(storage, data.miniatura);
-            thumbnailImageUrl = await getDownloadURL(thumbnailImageRef);
-          }
 
           const imagesArray = [mainImageUrl];
-          if (thumbnailImageUrl) {
+
+          // Manejar la miniatura si existe
+          if (data.miniatura) {
+            const thumbnailImageRef = ref(storage, data.miniatura);
+            const thumbnailImageUrl = await getDownloadURL(thumbnailImageRef);
             imagesArray.push(thumbnailImageUrl);
           }
 
           setImages(imagesArray);
           setProduct(data);
+          setSelectedColor(data.colores[0]); // Establecer color inicial aquí
         } else {
-          console.log("No such document!");
+          console.log("¡No existe el documento!");
         }
       } catch (error) {
         console.error("Error al obtener el producto:", error);
@@ -61,6 +62,10 @@ const Product = () => {
 
     fetchProduct();
   }, [id]);
+
+  const handleColorChange = (event) => {
+    setSelectedColor(event.target.value); // Actualiza el color seleccionado
+  };
 
   const handleDecrement = () => {
     if (quantity > 0) {
@@ -73,7 +78,7 @@ const Product = () => {
   };
 
   const handleBuy = () => {
-    const whatsappLink = `https://wa.me/?text=Quiero%20comprar%20${quantity}%20unidades%20de%20${product.nombre}`;
+    const whatsappLink = `https://wa.me/902040118?text=Quiero%20comprar%20${quantity}%20unidades%20de%20${product.nombre}%20en%20color%20${selectedColor}`;
     window.open(whatsappLink, "_blank");
   };
 
@@ -86,7 +91,7 @@ const Product = () => {
   }
 
   return (
-    <div className=" pt-[190px] md:pt-[120px] min-h-screen">
+    <div className="pt-[190px] md:pt-[120px] min-h-screen">
       <div className="w-[90%] lg:w-[80%] m-auto grid grid-cols-1 lg:grid-cols-2 gap-x-8">
         <div className="relative flex items-center justify-center">
           <Swiper
@@ -101,7 +106,7 @@ const Product = () => {
               <SwiperSlide key={index}>
                 <img
                   src={imageUrl}
-                  alt={`Imagen ${index + 1}`}
+                  alt={`Imagen del producto ${index + 1}`} // Texto alternativo para accesibilidad
                   className="carousel-image w-full h-auto"
                 />
               </SwiperSlide>
@@ -127,7 +132,11 @@ const Product = () => {
           <h3 className="text-xl lg:text-2xl font-semibold mb-2">
             Colores disponibles
           </h3>
-          <select className="border p-2 rounded mb-4 w-full capitalize outline-none">
+          <select
+            className="border p-2 rounded mb-4 w-full capitalize outline-none"
+            value={selectedColor}
+            onChange={handleColorChange} // Agrega el evento onChange
+          >
             {product.colores.map((color, index) => (
               <option key={index} value={color}>
                 {color}

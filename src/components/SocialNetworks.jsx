@@ -7,22 +7,38 @@ const SocialNetworks = () => {
   return (
     <div>
       <div className="cardSocialNetworks">
-        <a href="#" className="socialContainer containerOne">
-          <InstagramIcon/>
+        <a
+          href="https://www.instagram.com/futech_peru/"
+          className="socialContainer containerOne"
+          target="_blank"
+        >
+          <InstagramIcon />
         </a>
 
-        <a href="#" className="socialContainer containerTwo">
-          <TiktokIcon/>
+        <a
+          href="https://www.tiktok.com/@futech_peru_"
+          className="socialContainer containerTwo"
+          target="_blank"
+        >
+          <TiktokIcon />
         </a>
 
-        <a href="#" className="socialContainer containerThree">
+        <a
+          href="https://www.facebook.com/profile.php?id=61565637762823"
+          className="socialContainer containerThree"
+          target="_blank"
+        >
           <div>
-            <FacebookIcon/>
+            <FacebookIcon />
           </div>
         </a>
 
-        <a href="#" className="socialContainer containerFour">
-          <WhatsAppIcon/>
+        <a
+          href="https://wa.me/51902040118?text=Hola, quisiera más información..."
+          className="socialContainer containerFour"
+          target="_blank"
+        >
+          <WhatsAppIcon />
         </a>
       </div>
     </div>

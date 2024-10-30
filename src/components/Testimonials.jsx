@@ -10,30 +10,37 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import Testimonial from "./Testimonial";
 
+// IMPORTANDO IMAGENES
+import Alice from '../images/testimonios/AliceMartinez.jpg';
+import Carlos from '../images/testimonios/CarlosMendez.jpg';
+import Laura from '../images/testimonios/LauraFernandez.jpg';
+import James from '../images/testimonios/JamesRamos.jpg';
+import Fernando from '../images/testimonios/FernandoTorres.jpg'
+
 const testimonios = [
   {
-    name: "Alice Johnson",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Alice Martínez",
+    image: Alice,
     review: "¡Excelente servicio y atención rápida! Recomiendo al 100%.",
   },
   {
     name: "Carlos Méndez",
-    image: "https://randomuser.me/api/portraits/men/46.jpg",
+    image: Carlos,
     review: "El producto llegó en perfectas condiciones, muy satisfecho.",
   },
   {
     name: "Laura Fernández",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    image: Laura,
     review: "Superaron mis expectativas, ¡volveré a comprar!",
   },
   {
-    name: "James Peterson",
-    image: "https://randomuser.me/api/portraits/men/47.jpg",
+    name: "James Ramos",
+    image: James,
     review: "Gran calidad y excelente soporte, muy recomendable.",
   },
   {
-    name: "Emma Torres",
-    image: "https://randomuser.me/api/portraits/women/48.jpg",
+    name: "Fernando Torres",
+    image: Fernando,
     review: "Me encantó el trato personalizado. ¡Gracias!",
   },
 ];

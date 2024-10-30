@@ -1,10 +1,12 @@
 
-const Testimonial = ({name, review}) => {
+const Testimonial = ({name, image, review}) => {
   return (
     <div>
       <div className="cardTestimonial">
         <div className="header">
-          <div className="image"></div>
+          <div className="image">
+            <img src={image} alt="name" className="w-full h-full object-cover rounded-full" />
+          </div>
           <div>
             <div className="stars">
               <svg
