@@ -86,13 +86,13 @@ const Product = () => {
   }
 
   return (
-    <div className="pt-[120px] min-h-screen">
-      <div className="w-[80%] m-auto grid grid-cols-2 gap-x-8">
+    <div className=" pt-[190px] md:pt-[120px] min-h-screen">
+      <div className="w-[90%] lg:w-[80%] m-auto grid grid-cols-1 lg:grid-cols-2 gap-x-8">
         <div className="relative flex items-center justify-center">
           <Swiper
             modules={[Navigation]}
             navigation
-            className="w-full rounded-md"
+            className="w-full rounded-md p-0"
             loop={true}
             spaceBetween={10}
             slidesPerView={1}
@@ -102,7 +102,7 @@ const Product = () => {
                 <img
                   src={imageUrl}
                   alt={`Imagen ${index + 1}`}
-                  className="carousel-image"
+                  className="carousel-image w-full h-auto"
                 />
               </SwiperSlide>
             ))}
@@ -110,19 +110,23 @@ const Product = () => {
         </div>
 
         <div className="p-4 my-4">
-          <h2 className="text-4xl font-bold mb-4 text-Black">
+          <h2 className="text-2xl lg:text-4xl font-bold mb-4 text-Black">
             {product.nombre}
           </h2>
           <p className="mb-4">{product.descripcionLarga}</p>
 
-          <h3 className="text-2xl font-semibold mb-2">Especificaciones</h3>
+          <h3 className="text-xl lg:text-2xl font-semibold mb-2">
+            Especificaciones
+          </h3>
           <ul className="list-disc ml-6 mb-4">
             {product.especificaciones.map((spec, index) => (
               <li key={index}>{spec}</li>
             ))}
           </ul>
 
-          <h3 className="text-2xl font-semibold mb-2">Colores disponibles</h3>
+          <h3 className="text-xl lg:text-2xl font-semibold mb-2">
+            Colores disponibles
+          </h3>
           <select className="border p-2 rounded mb-4 w-full capitalize outline-none">
             {product.colores.map((color, index) => (
               <option key={index} value={color}>
@@ -131,8 +135,8 @@ const Product = () => {
             ))}
           </select>
 
-          <div className="flex items-center justify-center gap-x-4">
-            <div className="flex items-center gap-4 flex-1 ">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-4">
+            <div className="flex items-center gap-4 w-full md:flex-1">
               <button
                 onClick={handleDecrement}
                 className="border px-3 py-2 text-xl"
@@ -155,14 +159,14 @@ const Product = () => {
 
             <a
               onClick={handleBuy}
-              className="bg-green-500 text-white px-6 py-2 rounded flex items-center justify-center gap-2 flex-1"
+              className="bg-green-500 cursor-pointer hover:bg-green-600 text-white px-6 py-2 rounded flex items-center justify-center gap-2 w-full md:flex-1"
             >
               <WhatsAppIconWhite />
               Cotizar ahora!
             </a>
           </div>
 
-          <div className="flex text-center my-4 space-x-2">
+          <div className="flex flex-col md:flex-row text-center my-4 space-y-2 md:space-y-0 md:space-x-2">
             <div className="bg-purple-600 text-white font-bold rounded-xl shadow-xl p-2">
               <h1>Garantía de un año sin preocupaciones</h1>
             </div>
@@ -172,13 +176,13 @@ const Product = () => {
             </div>
           </div>
 
-          <h1 className="text-red-500">
+          <h1 className="text-red-500 text-center md:text-left font-bold">
             *Emitimos Boleta y factura: respaldo para tu compra
           </h1>
         </div>
       </div>
 
-      <div className="w-[80%] mt-10 m-auto">
+      <div className="w-[90%] lg:w-[80%] mt-10 m-auto">
         <RelatedProducts id={id} setLoading={setLoading} />
       </div>
     </div>

@@ -6,7 +6,7 @@ import SupportIcon from "../icons/SupportIcon"
 const ServiceHome = () => {
   return (
     <div className="bg-Blue">
-      <div className="w-[80%] m-auto flex items-center text-white py-8 justify-center gap-x-8">
+      <div className="w-[80%] m-auto space-y-5 md:flex items-center text-white py-8 justify-center md:gap-x-8">
         <div className="flex flex-col items-center text-center flex-1">
           <SecurityIcon />
 

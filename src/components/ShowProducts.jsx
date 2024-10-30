@@ -37,10 +37,10 @@ const ShowProducts = () => {
   return (
     <div>
       <div className="w-[80%] m-auto mt-10 mb-4">
-        <div className="flex justify-between items-center">
+        <div className=" sm:flex justify-between items-center">
           <div>
             <p className=" text-gray-500">Mira lo nuevo que traemos para ti!</p>
-            <h1 className="text-4xl font-bold text-Black">
+            <h1 className="text-4xl font-bold text-Black mb-4 sm:mb-0">
               Nuestros Productos
             </h1>
           </div>
@@ -68,11 +68,13 @@ const ShowProducts = () => {
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
-                <CardMotorcyele
-                  name={product.nombre}
-                  image={product.imageUrl}
-                  description={product.descripcion}
-                />
+                <Link to={`/motos-electricas/${product.id}`}>
+                  <CardMotorcyele
+                    name={product.nombre}
+                    image={product.imageUrl}
+                    description={product.descripcion}
+                  />
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

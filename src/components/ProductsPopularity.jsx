@@ -48,7 +48,6 @@ const ProductsPopularity = () => {
     fetchPopularMotos();
   }, []);
 
-  console.log(popularMotos);
 
   return (
     <div className="background-scroll">
@@ -57,7 +56,7 @@ const ProductsPopularity = () => {
           Las más Preferidas
         </h1>
 
-        <div className="flex items-center justify-between my-10">
+        <div className="flex flex-col items-center space-y-4 lg:flex lg:flex-row lg:items-center lg:justify-between my-10 lg:space-y-0">
           {popularMotos.map((moto) => (
             <CardProductPopularity
               key={moto.id}

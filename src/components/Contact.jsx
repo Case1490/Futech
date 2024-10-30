@@ -10,7 +10,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="pt-[130px] min-h-screen">
+    <div className="pt-[200px] md:pt-[130px] min-h-screen">
       <div className="w-[80%] m-auto">
         <h1 className="text-center font-bold text-Black text-5xl mt-4 mb-6">
           Contáctanos
@@ -20,12 +20,12 @@ const Contact = () => {
           ayudarte.
         </p>
 
-        <div className="flex items-center justify-around">
+        <div className="flex flex-col items-center lg:flex-row lg:items-center justify-around">
           <div className="w-[400px]">
             <img src={CallCenter} alt="Soporte" className="w-full" />
           </div>
 
-          <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-xl rounded-lg flex-1">
+          <div className="w-full lg:max-w-lg mx-auto mt-10 p-6 bg-white shadow-xl rounded-lg flex-1 mb-8 md:mb-0">
             <h2 className="text-2xl font-bold mb-6 text-center">Envíanos un mensaje</h2>
 
             <form className="space-y-4">

@@ -37,7 +37,7 @@ const Healthy = () => {
 
   return (
     <div className="w-[80%] m-auto">
-      <h1 className="text-center text-5xl text-Black font-bold">
+      <h1 className="text-center text-4xl sm:text-5xl text-Black font-bold">
         Beneficios de usar Moto Eléctrica
       </h1>
 

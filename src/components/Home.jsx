@@ -10,7 +10,7 @@ import Testimonials from "./Testimonials"
 
 export const Home = () => {
   return (
-    <div className="pt-[120px]">
+    <div className=" pt-[190px] md:pt-[120px]">
       <MainPage />
       <ServiceHome />
       <ShowProducts />

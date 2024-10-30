@@ -46,7 +46,7 @@ const ElectricMotorcycles = () => {
   }, []);
 
   return (
-    <div className="pt-[120px] min-h-screen fondo">
+    <div className=" pt-[170px] md:pt-[120px] min-h-screen fondo">
       <div className="w-[80%] m-auto mt-4 pb-10">
         <h1 className="text-center my-10 text-4xl font-bold text-black">
           Nuestros Productos
@@ -59,7 +59,7 @@ const ElectricMotorcycles = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {motorcycles.map((motorcycle) => (
               <Link key={motorcycle.id} to={`/motos-electricas/${motorcycle.id}`}>
                 <CardMotorcyele

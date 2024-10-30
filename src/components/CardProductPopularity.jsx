@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const CardProductPopularity = ({nombre, imagen, description}) => {
   return (
-    <div className="w-[30%] rounded-xl overflow-hidden">
+    <div className=" w-full sm:w-[90%] md:w-[80%] lg:w-[30%] rounded-xl overflow-hidden">
       <div className="bg-white">
-        <img src={imagen} alt="" className="w-full h-[350px] rounded-t-xl object-cover" />
+        <img src={imagen} alt="" className="w-full h-[350px] rounded-t-xl object-contain" />
       </div>
       <div className="bg-Blue p-4 text-white">
         <h1 className="text-center font-bold text-2xl">{nombre}</h1>

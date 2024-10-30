@@ -9,12 +9,12 @@ import AmericanExpress from "../images/metodos de pago/americanexpress_logo.png"
 const PaymentMethods = () => {
   return (
     <div className="bg-slate-100 py-4 my-12">
-      <div className="w-[80%] m-auto">
-        <h1 className="text-center text-4xl font-bold text-Black mt-10 mb-4">
+      <div className="w-[90%] md:w-[80%] m-auto">
+        <h1 className="text-center text-2xl md:text-4xl font-bold text-Black mt-10 mb-4">
           Métodos de Pago
         </h1>
 
-        <div className="flex items-center justify-around py-4">
+        <div className=" gap-x-2 md:gap-x-0 flex items-center justify-around py-4">
           <div>
             <img src={Yape} alt="Yape" className="h-14 object-contain" />
           </div>

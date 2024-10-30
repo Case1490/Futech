@@ -201,6 +201,12 @@ body{
   max-width: 40%;
 }
 
+@media (max-width: 640px) {
+  .content {
+    max-width: 80%;
+  }
+}
+
 /* BenefitsGrid.css */
 .grid-container {
   display: grid;
@@ -655,8 +661,45 @@ body{
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  .carousel-image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-image {
+    max-height: 250px;
+  }
+}
+
 .description {
   height: 65px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.mapa{
+  width: 600px;
+  height: 450px;
+}
+
+@media (max-width: 660px) {
+  .mapa{
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .mapa {
+    width: 340px;
+    height: 300px;
+  }
 }

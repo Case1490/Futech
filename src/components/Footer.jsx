@@ -4,7 +4,7 @@ import SocialNetworks from "./SocialNetworks";
 export default function Footer() {
   return (
     <footer className=" bg-Blue text-white">
-      <div className="w-[80%] m-auto flex py-8 justify-between gap-x-10">
+      <div className="w-[80%] m-auto flex flex-col text-center space-y-10 lg:flex lg:flex-row py-8 lg:justify-between lg:gap-x-10">
         <div className="flex-1">
           <h1 className="text-5xl font-bold">FutchPeru</h1>
           <h2 className="text-xl">Motos eléctricas</h2>
@@ -20,13 +20,13 @@ export default function Footer() {
         <div className="flex-1 flex flex-col justify-center">
           <ul className=" space-y-4 text-center font-bold text-xl">
             <li>
-              <Link className=" hover:text-Black">Inicio</Link>
+              <Link className=" hover:text-Black" to="/">Inicio</Link>
             </li>
             <li>
-              <Link className=" hover:text-Black">Motos eléctricas</Link>
+              <Link className=" hover:text-Black" to="/motos-electricas">Motos eléctricas</Link>
             </li>
             <li>
-              <Link className=" hover:text-Black">Contacto</Link>
+              <Link className=" hover:text-Black" to="/contacto">Contacto</Link>
             </li>
             <li>
               <Link className=" hover:text-Black">Sobre Nosotros</Link>
