@@ -20,19 +20,27 @@ export default function Footer() {
         <div className="flex-1 flex flex-col justify-center">
           <ul className=" space-y-4 text-center font-bold text-xl">
             <li>
-              <Link className=" hover:text-Black" to="/">Inicio</Link>
+              <Link className=" hover:text-Black" to="/">
+                Inicio
+              </Link>
             </li>
             <li>
-              <Link className=" hover:text-Black" to="/motos-electricas">Motos eléctricas</Link>
+              <Link className=" hover:text-Black" to="/motos-electricas">
+                Motos eléctricas
+              </Link>
             </li>
             <li>
-              <Link className=" hover:text-Black" to="/contacto">Contacto</Link>
+              <Link className=" hover:text-Black" to="/contacto">
+                Contacto
+              </Link>
             </li>
             <li>
-              <Link className=" hover:text-Black">Sobre Nosotros</Link>
+              <Link className=" hover:text-Black" to="/sobre-nosotros">
+                Sobre Nosotros
+              </Link>
             </li>
             <li>
-              <Link className=" hover:text-Black">
+              <Link className=" hover:text-Black" to="/cambios-devoluciones">
                 Política de cambios y devoluciones
               </Link>
             </li>
@@ -49,7 +57,10 @@ export default function Footer() {
 
       <hr className=" w-[90%] m-auto py-2" />
 
-      <h1 className="text-center py-6">&copy; {new Date().getFullYear()} FutechPeru. Todos los derechos reservados.</h1>
+      <h1 className="text-center py-6">
+        &copy; {new Date().getFullYear()} FutechPeru. Todos los derechos
+        reservados.
+      </h1>
     </footer>
   );
 }
